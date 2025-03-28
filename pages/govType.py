@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/govType.csv"
+csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/typeOfGov.csv"
 
 st.title("Timeseries Dashboard")
 
