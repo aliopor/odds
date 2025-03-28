@@ -11,7 +11,7 @@ st.title("Timeseries Dashboard")
 #csvPath = os.path.join(csvPathname, "data.csv")
 
 # Load CSV
-df = pd.read_csv(csv_url, parse_dates=[0], index_col="tstamp")
+df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 
 # Display chart
 fig = px.line(df)
