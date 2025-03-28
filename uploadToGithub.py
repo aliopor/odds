@@ -30,4 +30,4 @@ commitMessage = f"Update data {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 
 os.system(f"git add .")
 os.system(f'git commit -m "{commitMessage}"')
-os.system("git push origin main")
+os.system("git push")
