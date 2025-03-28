@@ -1,18 +1,15 @@
-# streamlit_app.py
 import streamlit as st
 import pandas as pd
-import plotly.express as px
 
-csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/formedGov.csv"
+st.set_page_config(page_title="Election Dashboard", layout="wide")
 
-st.set_page_config(page_title="Time Series Dashboard", layout="wide")
-st.title("Timeseries Dashboard")
+st.title("🗳️ Welcome to the Election Timeseries Dashboard")
+st.markdown("""
+This dashboard visualizes election data trends over time.  
+Use the sidebar to navigate between pages like:
+- Coalition vs Labor
+- Minor Parties Breakdown
+- Full Timeseries
 
-#csvPath = os.path.join(csvPathname, "data.csv")
-
-# Load CSV
-df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
-
-# Display chart
-fig = px.line(df)
-st.plotly_chart(fig, use_container_width=True)
+Data is auto-updated and powered by GitHub + Streamlit.
+""")
