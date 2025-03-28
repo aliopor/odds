@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/data.csv"
+csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/formedGov.csv"
 
 st.set_page_config(page_title="Time Series Dashboard", layout="wide")
 st.title("Timeseries Dashboard")
