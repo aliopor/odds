@@ -5,10 +5,7 @@ import plotly.express as px
 
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/formedGov.csv"
 
-st.set_page_config(page_title="Time Series Dashboard", layout="wide")
 st.title("Timeseries Dashboard")
-
-#csvPath = os.path.join(csvPathname, "data.csv")
 
 # Load CSV
 df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
