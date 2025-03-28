@@ -2,13 +2,6 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import os
-
-if os.name == "posix":
-    pathname = "/home/ranmadhu/Computing/Python/Odds"
-    csvPathname = "/home/ranmadhu/Computing/Python/Odds/GitRepo/odds"
-else:
-    pathname = r"Z:\Computing\Python\Odds"
 
 csv_url = "https://github.com/aliopor/odds/blob/main/data.csv"
 
