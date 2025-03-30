@@ -7,7 +7,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.set_page_config(page_title="2028 US Election", layout="wide")
+st.set_page_config(page_title="2028 US Election Winning Party", layout="wide")
 
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/USParty.csv"
 
@@ -22,7 +22,7 @@ df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 fig = px.line(
     df,
     y=["Democratic Party", "Republican Party"],
-    title="Likely 2028 US Election Winner",
+    title="Likely 2028 US Election Winning Party",
 )
 
 # Display chart
