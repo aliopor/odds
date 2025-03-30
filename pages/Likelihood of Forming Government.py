@@ -30,4 +30,9 @@ fig = px.line(
 fig.update_traces(selector=dict(name="Labor"), line=dict(color="red", dash="solid"))
 fig.update_traces(selector=dict(name="Coalition"), line=dict(color="blue", dash="solid"))
 
+fig.update_layout(
+    yaxis_tickformat=".0%",  # ".0%" = no decimals, ".2%" = 2 decimals
+    yaxis_title="Likelihood (%)"
+)
+
 st.plotly_chart(fig, use_container_width=True)
