@@ -23,8 +23,18 @@ csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/USPart
 # Load CSV
 df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 
+fig = px.line(
+    df,
+    y=["Democratic Party", "Republican Party"],
+    title="Election Trends",
+)
+
 # Display chart
-fig = px.line(df)
+#fig = px.line(df)
+fig.update_traces(selector=dict(name="Republican Party"), line=dict(color="red", dash="solid"))
+fig.update_traces(selector=dict(name="Democratic Party"), line=dict(color="blue", dash="solid"))
+
+
 fig.update_layout(
     yaxis=dict(
         tickformat=".0%",
