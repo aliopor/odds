@@ -5,7 +5,8 @@ import plotly.express as px
 
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/USParty.csv"
 
-st.title("Timeseries Dashboard")
+st.title("Likely US Election Winner")
+st.set_page_config(page_title="US Election", layout="wide")
 
 # Load CSV
 df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")

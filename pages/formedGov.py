@@ -6,6 +6,7 @@ import plotly.express as px
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/formedGov.csv"
 
 st.title("Likelihood of Forming Government")
+st.set_page_config(page_title="Likelihood of Forming Government", layout="wide")
 
 # Load CSV
 df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
