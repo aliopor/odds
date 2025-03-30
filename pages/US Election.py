@@ -7,10 +7,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.set_page_config(page_title="US Election", layout="wide")
+st.set_page_config(page_title="2028 US Election", layout="wide")
 
 # Optional: Repeat the title for clarity or styling
-st.title("US Election")
+st.title("2028 US Election")
 
 
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/USParty.csv"
