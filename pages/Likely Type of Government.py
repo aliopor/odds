@@ -32,4 +32,9 @@ fig.update_traces(selector=dict(name="Coalition Majority"), line=dict(color="blu
 fig.update_traces(selector=dict(name="Labor Minority"), line=dict(color="red", dash="dash"))
 fig.update_traces(selector=dict(name="Coalition Minority"), line=dict(color="blue", dash="dash"))
 
+fig.update_layout(
+    yaxis_tickformat=".0%",  # ".0%" = no decimals, ".2%" = 2 decimals
+    yaxis_title="Likelihood (%)"
+)
+
 st.plotly_chart(fig, use_container_width=True)

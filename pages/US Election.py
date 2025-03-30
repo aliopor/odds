@@ -25,4 +25,9 @@ df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 
 # Display chart
 fig = px.line(df)
+fig.update_layout(
+    yaxis_tickformat=".0%",  # ".0%" = no decimals, ".2%" = 2 decimals
+    yaxis_title="Likelihood (%)"
+)
+
 st.plotly_chart(fig, use_container_width=True)
