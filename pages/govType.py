@@ -3,10 +3,16 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+"""
+# Likely Type of Government
+"""
+
+
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/typeOfGov.csv"
 
 st.title("Likely Type of Government")
-st.set_page_config(page_title="Likely Type of Government", layout="wide")
+#st.set_page_config(page_title="Likely Type of Government", layout="wide")
+
 
 # Load CSV
 df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
