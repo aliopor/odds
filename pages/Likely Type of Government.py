@@ -33,7 +33,10 @@ fig.update_traces(selector=dict(name="Labor Minority"), line=dict(color="red", d
 fig.update_traces(selector=dict(name="Coalition Minority"), line=dict(color="blue", dash="dash"))
 
 fig.update_layout(
-    yaxis_tickformat=".0%",  # ".0%" = no decimals, ".2%" = 2 decimals
+    yaxis=dict(
+        tickformat=".0%",
+        range=[0, 1]
+    ),
     yaxis_title="Likelihood (%)"
 )
 
