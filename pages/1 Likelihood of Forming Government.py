@@ -32,7 +32,8 @@ fig.update_layout(
         tickformat=".0%",
         range=[0, 1]
     ),
-    yaxis_title="Likelihood (%)"
+    yaxis_title="Likelihood (%)",
+    xaxis_title="Date"
 )
 
 st.plotly_chart(fig, use_container_width=True)
