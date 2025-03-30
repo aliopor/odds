@@ -22,7 +22,6 @@ df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 fig = px.line(
     df,
     y=["Coalition Majority", "Coalition Minority", "Labor Majority", "Labor Minority"],
-    title="Likelihood of Result",
 )
 
 # Display chart
