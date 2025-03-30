@@ -7,7 +7,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.set_page_config(page_title="Likely Party to Form Government in 2024 Australian Election", layout="wide")
+#st.set_page_config(page_title="Likely Party to Form Government in 2024 Australian Election", layout="wide")
 
 # Optional: Repeat the title for clarity or styling
 #st.markdown("### Likely Party to Form Government in 2024 Australian Election")
