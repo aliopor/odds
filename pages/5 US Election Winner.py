@@ -11,24 +11,14 @@ st.set_page_config(page_title="2028 US Election Winner", layout="wide")
 
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/USElection.csv"
 
-#st.title("Likely US Election Winner")
-
-# Sidebar label and icon
-
 
 # Load CSV
 df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 
 fig = px.line(
     df,
-    #y=["Democratic Party", "Republican Party"],
     title="Likely 2028 US Election Winner",
 )
-
-# Display chart
-#fig = px.line(df)
-#fig.update_traces(selector=dict(name="Republican Party"), line=dict(color="red", dash="solid"))
-#fig.update_traces(selector=dict(name="Democratic Party"), line=dict(color="blue", dash="solid"))
 
 
 fig.update_layout(
@@ -42,4 +32,4 @@ fig.update_layout(
 
 st.plotly_chart(fig, use_container_width=True)
 
-st.info("Source: [Presidential Election 2028 - Winning Party](https://www.sportsbet.com.au/betting/politics/us-politics/presidential-election-2028-winning-party-8732140)")
+st.info("Source: [US Presidential Election 2028](https://www.sportsbet.com.au/betting/politics/us-politics/us-presidential-election-2028-8699063)")
