@@ -9,9 +9,6 @@ import plotly.express as px
 
 st.set_page_config(page_title="Chance of Majority Government in 2024 Australian Election", layout="wide")
 
-# Optional: Repeat the title for clarity or styling
-st.title("Chance of Majority Government in 2024 Australian Election")
-
 
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/Majority.csv"
 
@@ -23,6 +20,7 @@ df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 fig = px.line(
     df,
     y=["Yes"],
+    title="Chance of a Mjority Government in 2024 Australian Election",
 )
 
 # Display chart

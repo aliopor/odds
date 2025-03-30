@@ -7,24 +7,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-#st.set_page_config(page_title="Likely Party to Form Government in 2024 Australian Election", layout="wide")
-
-# Optional: Repeat the title for clarity or styling
-st.markdown(
-    """
-    <style>
-    .small-title {
-        font-size: 16px;
-        font-weight: 400;
-        color: #333333;
-        margin-bottom: 10px;
-    }
-    </style>
-
-    <p class="small-title">Likely Party to Form Government in 2024 Australian Election</p>
-    """,
-    unsafe_allow_html=True
-)
+st.set_page_config(page_title="Likely Party to Form Government in 2024 Australian Election", layout="wide")
 
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/formedGov.csv"
 
@@ -36,7 +19,7 @@ df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 fig = px.line(
     df,
     y=["Labor", "Coalition"],
-    title="Test",
+    title="Likely Party to Form Government in 2024 Australian Election",
 )
 
 # Display chart
