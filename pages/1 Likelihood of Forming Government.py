@@ -22,6 +22,7 @@ df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 fig = px.line(
     df,
     y=["Labor", "Coalition"],
+    title="Test",
 )
 
 # Display chart
