@@ -3,9 +3,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-"""
-# Likelihood of Forming Government
-"""
+"""Likelihood of Forming Government"""  # Appears in sidebar, NOT in page content
 
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/formedGov.csv"
 
