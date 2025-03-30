@@ -9,7 +9,7 @@ import plotly.express as px
 
 st.set_page_config(page_title="2028 US Election Winner", layout="wide")
 
-csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/USWinner.csv"
+csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/USElection.csv"
 
 #st.title("Likely US Election Winner")
 
