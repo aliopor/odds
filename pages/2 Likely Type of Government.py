@@ -25,8 +25,8 @@ fig = px.line(
 # Display chart
 #fig = px.line(df)
 fig.update_traces(selector=dict(name="Labor Majority"), line=dict(color="red", dash="solid"))
-fig.update_traces(selector=dict(name="Coalition Majority"), line=dict(color="blue", dash="solid"))
-fig.update_traces(selector=dict(name="Labor Minority"), line=dict(color="red", dash="dash"))
+fig.update_traces(selector=dict(name="Coalition Majority"), line=dict(color="blue", dash="dot"))
+fig.update_traces(selector=dict(name="Labor Minority"), line=dict(color="red", dash="dashdot"))
 fig.update_traces(selector=dict(name="Coalition Minority"), line=dict(color="blue", dash="dash"))
 
 fig.update_layout(
