@@ -7,10 +7,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.set_page_config(page_title="Chance of Majrotiy Government in 2024 Australian Election", layout="wide")
+st.set_page_config(page_title="Chance of Majority Government in 2024 Australian Election", layout="wide")
 
 # Optional: Repeat the title for clarity or styling
-st.title("Chance of Majrotiy Government in 2024 Australian Election")
+st.title("Chance of Majority Government in 2024 Australian Election")
 
 
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/Majority.csv"
