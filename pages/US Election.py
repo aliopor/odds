@@ -26,7 +26,10 @@ df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 # Display chart
 fig = px.line(df)
 fig.update_layout(
-    yaxis_tickformat=".0%",  # ".0%" = no decimals, ".2%" = 2 decimals
+    yaxis=dict(
+        tickformat=".0%",
+        range=[0, 1]
+    ),
     yaxis_title="Likelihood (%)"
 )
 
