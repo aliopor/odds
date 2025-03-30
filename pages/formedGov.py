@@ -1,16 +1,18 @@
+"""
+# Likelihood of Forming Government
+"""
+
 # streamlit_app.py
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-"""Likelihood of Forming Government"""  # Appears in sidebar, NOT in page content
+st.set_page_config(page_title="Likelihood of Forming Government", layout="wide")
+
+# Optional: Repeat the title for clarity or styling
+st.title("Likelihood of Forming Government")
 
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/formedGov.csv"
-
-st.title("Likelihood of Forming Government")
-#st.set_page_config(page_title="Likelihood of Forming Government", layout="wide")
-
-
 
 # Load CSV
 df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
