@@ -40,3 +40,5 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig, use_container_width=True)
+
+st.info("Source: [Type of Government Formed](https://www.sportsbet.com.au/betting/politics/australian-federal-politics/type-of-government-formed-8878095)")

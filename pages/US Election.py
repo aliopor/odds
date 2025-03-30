@@ -43,3 +43,5 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig, use_container_width=True)
+
+st.info("Source: [Type of Government Formed](https://www.sportsbet.com.au/betting/politics/us-politics/presidential-election-2028-winning-party-8732140)")
