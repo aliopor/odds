@@ -10,7 +10,7 @@ st.set_page_config(
 st.title("Welcome to the Election Timeseries Dashboard")
 st.markdown("""
 This dashboard visualizes election data trends over time.  
-Use the sidebar to navigate between pages like.
+Use the sidebar to navigate between pages.
 
 All data from Sportsbet.
 """)
