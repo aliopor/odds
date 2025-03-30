@@ -1,7 +1,11 @@
-import streamlit as st
-import pandas as pd
 
-st.set_page_config(page_title="Election Dashboard", layout="wide")
+
+st.set_page_config(
+    page_title="Dashboard",     # Shown in browser tab
+    page_icon="📊",             # Optional: sidebar icon
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 st.title("Welcome to the Election Timeseries Dashboard")
 st.markdown("""
