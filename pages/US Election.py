@@ -26,7 +26,7 @@ df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 fig = px.line(
     df,
     y=["Democratic Party", "Republican Party"],
-    title="Election Trends",
+    title="Likely Winner",
 )
 
 # Display chart
