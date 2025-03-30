@@ -20,7 +20,7 @@ df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 fig = px.line(
     df,
     y=["Yes"],
-    title="Chance of a Mjority Government in 2024 Australian Election",
+    title="Chance of a Majority Government in 2024 Australian Election",
 )
 
 # Display chart
