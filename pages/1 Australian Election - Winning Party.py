@@ -46,7 +46,7 @@ rename_map = {'Labor 45 or Less (Coalition 55 or more)':"Labor 45% or less", 'La
 df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 scenarios = df.tail(1).columns.tolist()
 scenariosRenamed = [rename_map.get(item, item) for item in scenarios]
-values = df.iloc[-1].tolist()
+values = df.iloc[-1].tolist()*100
 
 fig = go.Figure()
 
@@ -54,7 +54,7 @@ fig = px.bar(
     x=scenariosRenamed,
     y=values,
     labels={"x": "Scenario", "y": "Likelihood (%)"},
-    title="Likely Vote Share",
+    title="Likely 2-Party Preferred Vote Share",
 )
 
 fig.update_layout(
@@ -65,4 +65,4 @@ fig.update_layout(
 
 st.plotly_chart(fig, use_container_width=True)
 
-st.info("Source: [48th Parliament of Australia](https://www.sportsbet.com.au/betting/politics/australian-federal-politics/48th-parliament-of-australia-8571604)")
+st.info("Source: [48th Parliament of Australia](https://www.sportsbet.com.au/betting/politics/australian-federal-politics/48th-parliament-of-australia-8571604) and [Two-Party Preferred Vote Percentage](https://www.sportsbet.com.au/betting/politics/australian-federal-politics/two-party-preferred-vote-percentage-9083891)")
