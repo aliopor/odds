@@ -46,7 +46,7 @@ rename_map = {'Labor 45 or Less (Coalition 55 or more)':"Labor 45% or less", 'La
 df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 scenarios = df.tail(1).columns.tolist()
 scenariosRenamed = [rename_map.get(item, item) for item in scenarios]
-values = df.iloc[-1].tolist()*100
+values = df.iloc[-1].tolist()
 
 fig = go.Figure()
 
