@@ -45,7 +45,6 @@ df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 scenarios = df.tail(1).columns.tolist()
 values = df.iloc[-1].tolist()
 
-# Create the bell-shaped curve using a smooth line
 fig = go.Figure()
 
 # Add smooth line (interpolated)
