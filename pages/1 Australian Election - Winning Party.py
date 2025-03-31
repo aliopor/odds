@@ -62,6 +62,10 @@ fig.update_layout(
     yaxis=dict(range=[0, max(values) * 1.1]),
     template="simple_white"
 )
+fig.update_layout(
+    yaxis_tickformat=".0%",   # Show y-axis as percent
+    yaxis_range=[0, 1],       # Set range from 0% to 100%
+)
 
 st.plotly_chart(fig, use_container_width=True)
 
