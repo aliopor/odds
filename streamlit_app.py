@@ -7,9 +7,9 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-st.title("Welcome to the Odds Timeseries Dashboard")
+st.title("Welcome to the Odds Dashboard")
 st.markdown("""
-This dashboard visualizes the likelihood of outcomes over time, based on Sportsbet betting odds.
+This dashboard visualizes the likelihood of outcomes, based on Sportsbet betting odds.
 
 Use the sidebar to navigate between pages.
 
