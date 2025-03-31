@@ -41,15 +41,18 @@ st.plotly_chart(fig, use_container_width=True)
 
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/TwoPartyPreferred.csv"
 
+rename_map = {'Labor 45 or Less (Coalition 55 or more)':"Labor 45% or less", 'Labor 46 - Coalition 54' : "Labor 46%", 'Labor 47 - Coalition 53' : "Labor 47%", 'Labor 48 - Coalition 52': "Labor 48%", 'Labor 49 - Coalition 51': "Labor 49%", 'Labor 50 - Coalition 50': "Labor 50%", 'Labor 51 - Coalition 49' : "Labor 51%", 'Labor 52 - Coalition 48' : "Labor 52%", 'Labor 53 - Coalition 47':"Labor 53%", 'Labor 54 - Coalition 46' : "Labor 54%", 'Labor 55 or More (Coalition 45 or less)': "Labor 55% or more"}
+
 df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 scenarios = df.tail(1).columns.tolist()
+scenariosRenamed = [rename_map.get(item, item) for item in scenarios]
 values = df.iloc[-1].tolist()
 
 fig = go.Figure()
 
 # Add smooth line (interpolated)
 fig.add_trace(go.Scatter(
-    x=scenarios,
+    x=scenariosRenamed,
     y=values,
     mode='lines+markers',
     name="Likelihood",
@@ -58,7 +61,7 @@ fig.add_trace(go.Scatter(
 ))
 
 fig.update_layout(
-    title="Bell Curve of Vote Share Scenarios",
+    title="Probability of Vote Share",
     xaxis_title="Scenario",
     yaxis_title="Value / Likelihood (%)",
     xaxis_tickangle=-45,
