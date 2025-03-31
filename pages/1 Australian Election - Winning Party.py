@@ -20,6 +20,7 @@ fig = px.line(
     df,
     y=["Labor", "Coalition"],
     title="Likely Party to Form Government in 2024 Australian Election",
+    line_shape="spline"
 )
 
 # Display chart
