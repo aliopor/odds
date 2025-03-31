@@ -6,7 +6,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
+import plotly.graph_objects as go 
 
 st.set_page_config(page_title="Likely Party to Form Government in 2024 Australian Election", layout="wide")
 
