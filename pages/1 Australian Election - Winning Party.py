@@ -50,23 +50,17 @@ values = df.iloc[-1].tolist()
 
 fig = go.Figure()
 
-# Add smooth line (interpolated)
-fig.add_trace(go.Scatter(
+fig = px.bar(
     x=scenariosRenamed,
     y=values,
-    mode='lines+markers',
-    name="Likelihood",
-    line=dict(shape='spline', color='royalblue', width=3),
-    marker=dict(size=6)
-))
+    labels={"x": "Scenario", "y": "Likelihood (%)"},
+    title="Likely Vote Share",
+)
 
 fig.update_layout(
-    title="Probability of Vote Share",
-    xaxis_title="Scenario",
-    yaxis_title="Value / Likelihood (%)",
     xaxis_tickangle=-45,
-    template="simple_white",
-    height=500
+    yaxis=dict(range=[0, max(values) * 1.1]),
+    template="simple_white"
 )
 
 st.plotly_chart(fig, use_container_width=True)
