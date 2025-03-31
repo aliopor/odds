@@ -63,11 +63,12 @@ fig.update_layout(
     yaxis=dict(range=[0, max(values) * 1.1]),
     template="simple_white"
 )
-#fig.update_layout(
-#    yaxis_tickformat=".0%",   # Show y-axis as percent
-#    yaxis_range=[0, 1],       # Set range from 0% to 100%
-#)
 
-st.plotly_chart(fig, use_container_width=True)
+col1, col2, col3 = st.columns([1, 2, 1])
+
+with col2:
+    st.plotly_chart(fig, use_container_width=True)
+
+#st.plotly_chart(fig, use_container_width=True)
 
 st.info("Source: [48th Parliament of Australia](https://www.sportsbet.com.au/betting/politics/australian-federal-politics/48th-parliament-of-australia-8571604) and [Two-Party Preferred Vote Percentage](https://www.sportsbet.com.au/betting/politics/australian-federal-politics/two-party-preferred-vote-percentage-9083891)")
