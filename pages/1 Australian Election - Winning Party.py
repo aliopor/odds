@@ -47,7 +47,6 @@ df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 df = df*100
 scenarios = df.tail(1).columns.tolist()
 scenariosRenamed = [rename_map.get(item, item) for item in scenarios]
-category_order = {"x": scenariosRenamed} 
 values = df.iloc[-1].tolist()
 
 fig = go.Figure()
@@ -57,7 +56,6 @@ fig = px.bar(
     y=values,
     labels={"x": "Scenario", "y": "Likelihood (%)"},
     title="Likely 2-Party Preferred Vote Share",
-    category_orders=category_order
 )
 
 fig.update_layout(
