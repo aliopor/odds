@@ -57,7 +57,7 @@ fig = px.bar(
     y=values,
     labels={"x": "Scenario", "y": "Likelihood (%)"},
     title="Likely 2-Party Preferred Vote Share",
-    category_orders=category_order
+    xaxis_type = 'category'
 )
 
 fig.update_layout(
