@@ -14,7 +14,7 @@ df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 
 fig = px.line(
     df,
-    title="Likely 2025 NBA Champion,
+    title="Likely 2025 NBA Champion"
 )
 
 
