@@ -39,4 +39,4 @@ fig.update_layout(
 
 st.plotly_chart(fig, use_container_width=True)
 
-st.info("Source: [48th Parliament of Australia](https://www.sportsbet.com.au/betting/politics/australian-federal-politics/48th-parliament-of-australia-8571604) and [Two-Party Preferred Vote Percentage](https://www.sportsbet.com.au/betting/politics/australian-federal-politics/two-party-preferred-vote-percentage-9083891)")
+st.info("Source: [49th Parliament of Australia](https://www.sportsbet.com.au/betting/politics/australian-federal-politics/49th-parliament-of-australia-9186904)")
