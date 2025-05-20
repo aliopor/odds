@@ -56,4 +56,4 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 
-st.info("Sources: [F1 Drivers Championship 2025](https://www.sportsbet.com.au/betting/motor-racing/formula-1/f1-drivers-championship-2025-8767626) and [F1 Constructors Championship 2025](https://www.sportsbet.com.au/betting/motor-racing/formula-1/f1-drivers-championship-2025-8767626)")
+st.info("Sources: [F1 Drivers Championship 2025](https://www.sportsbet.com.au/betting/motor-racing/formula-1/f1-drivers-championship-2025-8767626) and [F1 Constructors Championship 2025](https://www.sportsbet.com.au/betting/motor-racing/formula-1/f1-constructors-championship-2025-8808443)")
