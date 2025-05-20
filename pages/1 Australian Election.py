@@ -14,9 +14,9 @@ csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/formed
 
 # Load CSV
 df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
-combined = pd.concat([priceData['Coalition'].dropna(), priceData['Liberal and/or Nationals'].dropna()])
-df = pd.DataFrame({"combined":combined})
-df = pd.concat([priceData, df], axis=1)
+combined = pd.concat([df['Coalition'].dropna(), df['Liberal and/or Nationals'].dropna()])
+dfCombined = pd.DataFrame({"combined":combined})
+df = pd.concat([df, dfCombined], axis=1)
 df.drop('Liberal and/or Nationals', axis=1, inplace=True)
 df.rename(columns={'combined': 'Liberal and/or Nationals'}, inplace=True)
 
