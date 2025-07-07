@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.set_page_config(page_title="2025 NBA Winner", layout="wide")
+st.set_page_config(page_title="2026 NBA Winner", layout="wide")
 
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/NBA.csv"
 
@@ -14,7 +14,7 @@ df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 
 fig = px.line(
     df,
-    title="Likely 2025 NBA Champion"
+    title="Likely 2026 NBA Champion"
 )
 
 
@@ -30,4 +30,4 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 
-st.info("Source: [NBA Championship 24/25](https://www.sportsbet.com.au/betting/basketball-us/nba/nba-championship-2024-25-8282449)")
+st.info("Source: [NBA Championship 25/26](https://www.sportsbet.com.au/betting/basketball-us/nba-futures/nba-futures-2026-9324399)")
