@@ -21,6 +21,8 @@ fig = px.line(
     title="Likely 2026 US House Majority",
 )
 
+fig.update_traces(selector=dict(name="Republican Party"), line=dict(color="red", dash="solid"))
+fig.update_traces(selector=dict(name="Democratic Party"), line=dict(color="blue", dash="solid"))
 
 fig.update_layout(
     yaxis=dict(
@@ -43,7 +45,8 @@ fig = px.line(
     df,
     title="Likely 2026 US Senate Majority",
 )
-
+fig.update_traces(selector=dict(name="Republican Party"), line=dict(color="red", dash="solid"))
+fig.update_traces(selector=dict(name="Democratic Party"), line=dict(color="blue", dash="solid"))
 
 fig.update_layout(
     yaxis=dict(
