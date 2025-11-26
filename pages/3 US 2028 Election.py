@@ -65,4 +65,50 @@ fig.update_layout(
 
 st.plotly_chart(fig, use_container_width=True)
 
-st.info("Sources: [Presidential Election 2028 - Winning Party](https://www.sportsbet.com.au/betting/politics/us-politics/presidential-election-2028-winning-party-8732140) and [US Presidential Election 2028](https://www.sportsbet.com.au/betting/politics/us-politics/us-presidential-election-2028-8699063)")
+csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/2028DemocraticNominee.csv"
+
+
+# Load CSV
+df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
+
+fig = px.line(
+    df,
+    title="Likely 2028 US Democratic Nominee",
+)
+
+
+fig.update_layout(
+    yaxis=dict(
+        tickformat=".0%",
+        range=[0, 1]
+    ),
+    yaxis_title="Likelihood (%)",
+    xaxis_title="Date"
+)
+
+st.plotly_chart(fig, use_container_width=True)
+
+csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/2028RepublicanNominee.csv"
+
+
+# Load CSV
+df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
+
+fig = px.line(
+    df,
+    title="Likely 2028 US Republican Nominee",
+)
+
+
+fig.update_layout(
+    yaxis=dict(
+        tickformat=".0%",
+        range=[0, 1]
+    ),
+    yaxis_title="Likelihood (%)",
+    xaxis_title="Date"
+)
+
+st.plotly_chart(fig, use_container_width=True)
+
+st.info("Sources: [Presidential Election 2028 - Winning Party](https://www.sportsbet.com.au/betting/politics/us-politics/presidential-election-2028-winning-party-8732140), [US Presidential Election 2028](https://www.sportsbet.com.au/betting/politics/us-politics/us-presidential-election-2028-8699063), [Democratic Presidential Nominee 2028](https://www.sportsbet.com.au/betting/politics/us-politics/democratic-presidential-nominee-2028-9863647), and [Republican Presidential Nominee 2028](https://www.sportsbet.com.au/betting/politics/us-politics/republican-presidential-nominee-2028-9863709)")
