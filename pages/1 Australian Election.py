@@ -48,7 +48,7 @@ df.rename(columns={'combined': 'Liberal and/or Nationals'}, inplace=True)
 
 fig = px.line(
     df,
-    y=["Labor", "Liberal and/or Nationals"],
+    y=["Labor", "Liberal and/or Nationals", "Any Other Result"],
     title="Likely Party to Form Government in 2028(?) Australian Election"
 )
 
@@ -56,6 +56,7 @@ fig = px.line(
 #fig = px.line(df)
 fig.update_traces(selector=dict(name="Labor"), line=dict(color="red", dash="solid"))
 fig.update_traces(selector=dict(name="Coalition"), line=dict(color="blue", dash="solid"))
+fig.update_traces(selector=dict(name="Any Other Result"), line=dict(color="green", dash="solid"))
 
 fig.update_layout(
     yaxis=dict(
