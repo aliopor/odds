@@ -9,29 +9,6 @@ import plotly.express as px
 import plotly.graph_objects as go 
 
 st.set_page_config(page_title="Likely Party to Form Government in 2028(?) Australian Election", layout="wide")
-##########################################
-csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/2026FarrerByElection.csv"
-
-
-# Load CSV
-df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
-
-fig = px.line(
-    df,
-    title="Likely winner of the Farrer By-Election"
-)
-
-
-fig.update_layout(
-    yaxis=dict(
-        tickformat=".0%",
-        range=[0, 1]
-    ),
-    yaxis_title="Likelihood (%)",
-    xaxis_title="Date"
-)
-
-st.plotly_chart(fig, use_container_width=True)
 
 #####################################
 
