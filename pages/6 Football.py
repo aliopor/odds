@@ -14,7 +14,7 @@ df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
 
 fig = px.line(
     df,
-    title="Likely 2025/2026 English Premier League Winner"
+    title="Likely 2026/2027 English Premier League Winner"
 )
 
 
@@ -32,4 +32,4 @@ st.plotly_chart(fig, use_container_width=True)
 
 
 
-st.info("Sources: [English Premier League Outrights 2026/27](https://www.sportsbet.com.au/betting/soccer/united-kingdom/english-premier-league/english-premier-league-outrights-2025-26-9166519)")
+st.info("Sources: [English Premier League Outrights 2026/27](https://www.sportsbet.com.au/betting/soccer/united-kingdom/english-premier-league/english-premier-league-outrights-2026-27-10506128)")
