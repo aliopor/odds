@@ -42,6 +42,33 @@ fig.update_layout(
 
 st.plotly_chart(fig, use_container_width=True)
 
+###############################################
+
+csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/2028USResults.csv"
+
+
+# Load CSV
+df = pd.read_csv(csv_url, parse_dates=["tstamp"], index_col="tstamp")
+
+fig = px.line(
+    df,
+    title="Likely 2028 US Election Outcome",
+)
+
+
+fig.update_layout(
+    yaxis=dict(
+        tickformat=".0%",
+        range=[0, 1]
+    ),
+    yaxis_title="Likelihood (%)",
+    xaxis_title="Date"
+)
+
+st.plotly_chart(fig, use_container_width=True)
+
+###############################################
+
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/USElection.csv"
 
 
@@ -64,7 +91,7 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig, use_container_width=True)
-
+###############################################
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/2028DemocraticNominee.csv"
 
 
@@ -87,7 +114,7 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig, use_container_width=True)
-
+###############################################
 csv_url = "https://raw.githubusercontent.com/aliopor/odds/refs/heads/main/2028RepublicanNominee.csv"
 
 
