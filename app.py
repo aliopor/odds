@@ -77,10 +77,36 @@ top_parties = (
 
 # Optional toggle to show all parties vs top 6
 limit_to_top = st.checkbox(f"Limit to Top {TOP_N_PARTIES} parties", value=True)
+
+top_method = st.radio(
+    "Rank top parties by:",
+    options=["Most recent probability", "Highest historical probability"],
+    horizontal=True,
+    disabled=not limit_to_top,
+)
+
 if limit_to_top:
-    plot_df = market_df[market_df[COL_PARTY].isin(top_parties)]
+    if top_method == "Most recent probability":
+        latest_market_time = market_df[COL_TIME].max()
+        latest_snapshot = market_df[market_df[COL_TIME] == latest_market_time]
+        top_parties = (
+            latest_snapshot.sort_values("probability", ascending=False)[COL_PARTY]
+            .head(TOP_N_PARTIES)
+            .tolist()
+        )
+    else:
+        # Peak ("highest") probability reached across the market's history
+        top_parties = (
+            market_df.groupby(COL_PARTY)["probability"]
+            .max()
+            .sort_values(ascending=False)
+            .head(TOP_N_PARTIES)
+            .index.tolist()
+        )
+
+    plot_df = market_df[market_df[COL_PARTY].isin(top_parties)].copy()
 else:
-    plot_df = market_df
+    plot_df = market_df.copy()
 
 # Sort chronologically for clean line plotting
 plot_df = plot_df.sort_values(COL_TIME)
@@ -94,11 +120,11 @@ fig = px.line(
     x=COL_TIME,
     y="probability",
     color=COL_PARTY,
-    title=f"{selected_market} — Normalized Implied Probability",
+    title=f"{selected_market}",
     labels={
         COL_TIME: "Date / Time",
         "probability": "Implied Probability",
-        COL_PARTY: "Outcome / Party",
+        COL_PARTY: "Outcome",
         "price_display": "Price",
     },
     hover_data={COL_PRICE: False, "price_display": True, "probability": ":.1%"},
