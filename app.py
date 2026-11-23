@@ -86,6 +86,9 @@ else:
 plot_df = plot_df.sort_values(COL_TIME)
 
 # --- 5. PLOTLY INTERACTIVE CHART ---
+plot_df = plot_df.copy()
+plot_df["price_display"] = plot_df[COL_PRICE].round().astype("Int64")
+
 fig = px.line(
     plot_df,
     x=COL_TIME,
@@ -95,9 +98,10 @@ fig = px.line(
     labels={
         COL_TIME: "Date / Time",
         "probability": "Implied Probability",
-        COL_PARTY: "Outcome / Party"
+        COL_PARTY: "Outcome / Party",
+        "price_display": "Price",
     },
-    hover_data={COL_PRICE: True, "probability": ":.1%"}
+    hover_data={COL_PRICE: False, "price_display": True, "probability": ":.1%"},
 )
 
 fig.update_yaxes(tickformat=".0%", range=[0, 1])
@@ -110,6 +114,11 @@ with st.expander("View Latest Snapshot Table"):
     summary_table = (
         latest_snapshot[[COL_PARTY, COL_PRICE, "probability"]]
         .sort_values("probability", ascending=False)
-        .assign(probability=lambda x: (x["probability"] * 100).round(2).astype(str) + "%")
+        .assign(
+            **{
+                COL_PRICE: lambda x: x[COL_PRICE].round().astype("Int64"),
+                "probability": lambda x: (x["probability"] * 100).round(2).astype(str) + "%",
+            }
+        )
     )
     st.dataframe(summary_table, use_container_width=True, hide_index=True)
