@@ -46,7 +46,7 @@ market_last_seen = df.groupby(COL_MARKET)[COL_TIME].max()
 active_markets = sorted(market_last_seen[market_last_seen >= cutoff_time].index.tolist())
 archived_markets = sorted(market_last_seen[market_last_seen < cutoff_time].index.tolist())
 
-# --- 4. UI & INTERACTIVE VISUALIZATION ---
+# --- 4. UI & INTERACTIVE VISUALISATION ---
 st.title("Market Implied Probability Tracker")
 
 view_mode = st.radio(
@@ -61,7 +61,7 @@ if not available_markets:
     st.info(f"No markets found in {view_mode}.")
     st.stop()
 
-selected_market = st.selectbox("Select a Market to Visualize:", available_markets)
+selected_market = st.selectbox("Select a Market to Visualise:", available_markets)
 
 # Filter data for selected market
 market_df = df[df[COL_MARKET] == selected_market].copy()
